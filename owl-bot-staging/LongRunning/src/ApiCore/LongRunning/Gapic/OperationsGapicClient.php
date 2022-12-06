@@ -89,7 +89,7 @@ class OperationsGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'apiEndpoint' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
             'clientConfig' => __DIR__ . '/../resources/operations_client_config.json',
             'descriptorsConfigPath' => __DIR__ . '/../resources/operations_descriptor_config.php',
             'gcpApiConfigPath' => __DIR__ . '/../resources/operations_grpc_config.json',
@@ -110,7 +110,7 @@ class OperationsGapicClient
      * @param array $options {
      *     Optional. Options for configuring the service API wrapper.
      *
-     *     @type string $serviceAddress
+     *     @type string $apiEndpoint
      *           The address of the API remote host. May optionally include the port, formatted
      *           as "<uri>:<port>". Default 'longrunning.googleapis.com:443'.
      *     @type string|array|FetchAuthTokenInterface|CredentialsWrapper $credentials
@@ -139,7 +139,7 @@ class OperationsGapicClient
      *           *Advanced usage*: Additionally, it is possible to pass in an already
      *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
      *           that when this object is provided, any settings in $transportConfig, and any
-     *           $serviceAddress setting, will be ignored.
+     *           $apiEndpoint setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
